@@ -8,17 +8,16 @@
 # @lc code=start
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return self.solve(n)
-
-    def solve(self, n: int) -> int:
-        if n == 0:
+        if n == 1:
             return 1
-        count = 0
-        if n >= 2:
-            count += self.solve(n - 2)
-        if n >= 1:
-            count += self.solve(n - 1)
-        return count
+        dp = [0] * (n + 1)
+        # base case
+        dp[1] = 1
+        dp[2] = 2
+        # state transmit
+        for i in range(3, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+        return dp[n]
 
 
 # @lc code=end
