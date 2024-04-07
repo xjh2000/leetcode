@@ -7,5 +7,6 @@
 # @lc code=start
 class Solution:
     def maximizeTheProfit(self, n: int, offers: List[List[int]]) -> int:
+        
 # @lc code=end
 
